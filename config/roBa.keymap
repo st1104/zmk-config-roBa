@@ -92,32 +92,32 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
             bindings = <&mo>, <&to_layer_0>;
-
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
 
-        // #includeのあとのあたりにスクロール量を変更
-
-        #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
-
-        //  behaviors に追加
-        // 新しいスクロール動作の追加
+        to_layer_0: to_layer_0 {
+            compatible = "zmk,behavior-switch-layer";
+            label = "TO_LAYER_0";
+            #binding-cells = <1>;
+        };
 
         scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-
-            // 追加: スクロールのタップ時間を設定 (20ms)
-
             tap-ms = <20>;
         };
 
-        // 設定したいレイヤー
+        sl: sl {
+            compatible = "zmk,behavior-switch-layer";
+            label = "SWITCH_LAYER";
+            #binding-cells = <1>;
+        };
 
         sensor-bindings = <&scroll_up_down>;
     };
+
 
     keymap {
         compatible = "zmk,keymap";
