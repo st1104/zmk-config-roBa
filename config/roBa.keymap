@@ -109,7 +109,7 @@
             tap-ms = <20>;
         };
 
-        sl: sl {
+        sl: sl_behavior {
             compatible = "zmk,behavior-switch-layer";
             label = "SWITCH_LAYER";
             #binding-cells = <1>;
