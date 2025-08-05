@@ -80,6 +80,13 @@
             bindings = <&none &kp LS(P) &kp A &kp S &kp S &kp W &kp N0 &kp R &kp D &kp EXCL &kp N1>;
             label = "PP";
         };
+
+        pwp: pwp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp LS(S) &kp A &kp K &kp U &kp R &kp A &kp I &kp N2 &kp N2 &kp N9 &kp N9 &kp N6 &kp N4 &kp N1 &kp N2>;
+            label = "PWP";
+        };
     };
 
     behaviors {
@@ -91,21 +98,27 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
-// #includeのあとのあたりにスクロール量を変更
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
-//  behaviors に追加
-// 新しいスクロール動作の追加
+        // #includeのあとのあたりにスクロール量を変更
+
+        #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
+
+        //  behaviors に追加
+        // 新しいスクロール動作の追加
+
         scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
             // 追加: スクロールのタップ時間を設定 (20ms)
+
             tap-ms = <20>;
         };
 
-// 設定したいレイヤー
-sensor-bindings = <&scroll_up_down>;
+        // 設定したいレイヤー
+
+        sensor-bindings = <&scroll_up_down>;
     };
 
     keymap {
@@ -119,13 +132,13 @@ sensor-bindings = <&scroll_up_down>;
 &kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 1 TAB  &lt 2 SPACE  &lt_to_layer_0 3 LA(GRAVE)      &kp BACKSPACE  &lt 1 ENTER                             &kp DEL
             >;
 
-            sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         FUNCTION {
             bindings = <
 &trans  &trans  &trans  &trans  &pp                                     &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
-&trans  &trans  &trans  &trans  &PPP    &kp LEFT_SHIFT      &kp F13     &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
+&trans  &trans  &trans  &trans  &pwp    &kp LEFT_SHIFT      &kp F13     &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
 &trans  &trans  &trans  &trans  &trans  &kp LEFT_SHIFT      &kp LS(F2)  &kp F2  &trans  &trans  &trans  &kp F11
 &trans  &trans  &trans  &trans  &trans  &trans              &trans      &trans                          &kp F12
             >;
