@@ -120,10 +120,10 @@
 
         FUNCTION {
             bindings = <
-&kp RCTRL  &kp HOME      &kp UP_ARROW      &kp END        &kp QUESTION                                       &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
-&trans     &kp LEFT      &kp DOWN          &kp RIGHT      &trans        &kp LEFT_SHIFT      &kp F13          &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
-&trans     &kp LG(LEFT)  &kp LG(UP_ARROW)  &kp LG(RIGHT)  &trans        &kp LEFT_SHIFT      &kp RIGHT_SHIFT  &trans  &trans  &trans  &trans  &kp F11
-&trans     &trans        &kp LG(DOWN)      &trans         &trans        &trans              &trans           &trans                          &kp F12
+&kp RCTRL  &kp HOME      &kp UP_ARROW      &kp END        &kp BACKSPACE                                       &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
+&trans     &kp LEFT      &kp DOWN          &kp RIGHT      &trans         &kp LEFT_SHIFT      &kp F13          &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
+&trans     &kp LG(LEFT)  &kp LG(UP_ARROW)  &kp LG(RIGHT)  &trans         &kp ENTER           &kp RIGHT_SHIFT  &trans  &trans  &trans  &trans  &kp F11
+&trans     &trans        &kp LG(DOWN)      &trans         &trans         &trans              &trans           &trans                          &kp F12
             >;
         };
 
