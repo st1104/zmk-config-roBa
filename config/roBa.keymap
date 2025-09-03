@@ -139,6 +139,8 @@
 &kp Z      &kp X         &kp C         &kp V      &kp B        &kp LEFT_SHIFT      &kp UNDER      &kp N        &kp M  &kp COMMA  &kp DOT  &kp MINUS
 &kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt 4 TAB  &lt 2 SPACE  &kp LS(CAPS)        &kp BACKSPACE  &lt 1 ENTER                             &kp DEL
             >;
+
+            sensor-bindings = <&inc_dec_kp C_AC_ZOOM_IN C_AC_ZOOM_OUT>;
         };
 
         FUNCTION {
